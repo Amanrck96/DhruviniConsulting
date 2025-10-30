@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "insight-1",
+      "description": "A modern office with people collaborating.",
+      "imageUrl": "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2MTc5ODEyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office collaboration"
+    },
+    {
+      "id": "insight-2",
+      "description": "An abstract representation of AI and data.",
+      "imageUrl": "https://images.unsplash.com/photo-1676411237170-ddca6e4c158a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMEFJfGVufDB8fHx8MTc2MTczNjEwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract AI"
+    },
+    {
+      "id": "insight-3",
+      "description": "A group of diverse employees looking happy at work.",
+      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoYXBweSUyMGVtcGxveWVlc3xlbnwwfHx8fDE3NjE4MjA3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy employees"
+    },
+    {
+      "id": "service-talent-acquisition",
+      "description": "A group of professionals in a meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1554902843-260acd0993f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwbWVldGluZ3xlbnwwfHx8fDE3NjE3ODU2MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional meeting"
+    },
+    {
+      "id": "service-executive-search",
+      "description": "A confident executive looking out a window.",
+      "imageUrl": "https://images.unsplash.com/photo-1584940121258-c2553b66a739?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb25maWRlbnQlMjBleGVjdXRpdmV8ZW58MHx8fHwxNzYxODIwNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "confident executive"
+    },
+    {
+      "id": "service-leadership-hiring",
+      "description": "A team celebrating a success.",
+      "imageUrl": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwc3VjY2Vzc3xlbnwwfHx8fDE3NjE3MDI1MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team success"
+    }
+  ]
 }
