@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useEffect, useRef, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -33,7 +33,7 @@ function SubmitButton() {
 
 export default function ContactForm({ onFormSubmit }: ContactFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useFormState<FormState, FormData>(submitContactForm, {
+  const [state, formAction] = useActionState<FormState, FormData>(submitContactForm, {
     message: '',
     success: false,
   });
