@@ -2,21 +2,15 @@
 
 import { useEffect, useRef } from 'react';
 import { useActionState } from 'react';
-import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { submitContactForm, type FormState } from '../actions';
+import { submitContactForm } from '../actions';
+import { ContactFormSchema, type FormState } from '../schema';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { SubmitButton } from './submit-button';
-
-const ContactFormSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
 
 interface ContactFormProps {
     onFormSubmit: (success: boolean, message: string) => void;
@@ -36,7 +30,6 @@ export default function ContactForm({ onFormSubmit }: ContactFormProps) {
       email: '',
       message: '',
     },
-    // We clear the form on success, so we don't need to sync the form state with the action state
   });
 
   useEffect(() => {

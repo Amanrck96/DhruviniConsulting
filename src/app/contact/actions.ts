@@ -1,22 +1,25 @@
 'use server';
 
-import { z } from 'zod';
-
-const ContactFormSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
-
-export type FormState = {
-  message: string;
-  success: boolean;
-};
+import { sendContactEmail } from '@/lib/email';
+import { headers } from 'next/headers';
+import { ContactFormSchema, type FormState } from './schema';
 
 export async function submitContactForm(
   prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
+  // CSRF protection - verify request origin
+  const headersList = headers();
+  const origin = await headersList.get('origin');
+  const host = await headersList.get('host');
+  
+  if (!origin || !host || !origin.includes(host)) {
+    return {
+      message: 'Invalid request origin. CSRF protection triggered.',
+      success: false,
+    };
+  }
+
   const validatedFields = ContactFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -30,23 +33,15 @@ export async function submitContactForm(
     };
   }
   
-  // Simulate network latency and processing
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  // In a real app, you would send an email or save to a database here.
-  console.log('Contact form submitted:');
-  console.log(validatedFields.data);
-
-  // Simulate a potential failure
-  if (validatedFields.data.name.toLowerCase() === 'fail') {
-     return {
-        message: 'This is a simulated failure. Please try a different name.',
-        success: false,
-     }
+  try {
+    // Send email using our email service
+    const result = await sendContactEmail(validatedFields.data);
+    return result;
+  } catch (error) {
+    console.error('Error in form submission:', error);
+    return {
+      message: 'Failed to send your message. Please try again later.',
+      success: false,
+    };
   }
-
-  return {
-    message: 'Thank you for your message! We will get back to you shortly.',
-    success: true,
-  };
 }
