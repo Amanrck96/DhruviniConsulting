@@ -45,6 +45,7 @@ export default function ContactForm({ onFormSubmit }: ContactFormProps) {
       email: '',
       message: '',
     },
+    // We clear the form on success, so we don't need to sync the form state with the action state
   });
 
   useEffect(() => {
@@ -59,28 +60,62 @@ export default function ContactForm({ onFormSubmit }: ContactFormProps) {
 
   return (
     <Card>
-      <form ref={formRef} action={formAction}>
-        <CardHeader>
-          <CardTitle className="font-headline text-2xl">Send us a message</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-           <div className="space-y-2">
-            <FormLabel htmlFor="name">Name</FormLabel>
-            <Input id="name" name="name" placeholder="Your Name" required />
-          </div>
-          <div className="space-y-2">
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
-          </div>
-          <div className="space-y-2">
-            <FormLabel htmlFor="message">Message</FormLabel>
-            <Textarea id="message" name="message" placeholder="Your message..." required minLength={10} />
-          </div>
-        </CardContent>
-        <CardFooter>
-          <SubmitButton />
-        </CardFooter>
-      </form>
+      <Form {...form}>
+        <form
+          ref={formRef}
+          action={formAction}
+          // We can use the native onReset event to clear the form state
+          onReset={() => form.reset()}
+        >
+          <CardHeader>
+            <CardTitle className="font-headline text-2xl">Send us a message</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your Name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="your.email@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Your message..." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter>
+            <SubmitButton />
+          </CardFooter>
+        </form>
+      </Form>
     </Card>
   );
 }
