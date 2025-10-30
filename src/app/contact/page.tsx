@@ -36,15 +36,15 @@ export default function ContactPage() {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-secondary/50 p-8 rounded-lg">
-            <h2 className="text-3xl font-headline font-semibold mb-8 text-primary">Contact Information</h2>
+            <h2 className="text-3xl font-headline font-semibold mb-8 text-primary">Contact</h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-primary text-primary-foreground rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center">
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Our Office</h3>
-                  <p className="text-muted-foreground">123 Leadership Lane, Suite 500<br />New York, NY 10001</p>
+                  <h3 className="text-lg font-semibold">Office Address</h3>
+                  <p className="text-muted-foreground">xyxyxyxyxyxyxyxyxyxy</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -52,8 +52,8 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Email Us</h3>
-                  <a href="mailto:contact@dhruvini.co" className="text-accent-foreground hover:underline">contact@dhruvini.co</a>
+                  <h3 className="text-lg font-semibold">Email</h3>
+                  <a href="mailto:contact@dhruvini.co" className="text-accent-foreground hover:underline">contact@dhruvini.co - abx.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -61,8 +61,8 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Call Us</h3>
-                  <a href="tel:+1234567890" className="text-accent-foreground hover:underline">+1 (234) 567-890</a>
+                  <h3 className="text-lg font-semibold">Phone</h3>
+                  <a href="tel:+1234567890" className="text-accent-foreground hover:underline">+1 (234) 567-890 - xxxxxxxxxxxxxxx</a>
                 </div>
               </div>
             </div>

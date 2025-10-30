@@ -64,12 +64,12 @@ export default function Footer() {
               <ul className="text-muted-foreground font-medium space-y-4">
                   <li>
                     <a href="mailto:contact@dhruvini.co" className="hover:text-primary transition-colors">
-                        contact@dhruvini.co
+                        contact@dhruvini.co - abx.com
                     </a>
                   </li>
                   <li>
                     <a href="tel:+1234567890" className="hover:text-primary transition-colors">
-                        +1 (234) 567-890
+                        +1 (234) 567-890 - xxxxxxxxxxxxxxx
                     </a>
                   </li>
               </ul>
