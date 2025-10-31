@@ -17,21 +17,21 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-secondary/50">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary tracking-tight">
-              Shaping the Future of Leadership
+        <section className="hero-gradient py-16 md:py-24 rounded-xl mx-4 md:mx-8 my-8">
+          <div className="container mx-auto px-4 text-white">
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">
+              Transforming HR & Business Operations with Data-Driven Strategy
             </h1>
-            <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
-              Dhruvini Consulting is your strategic partner in talent acquisition, executive search, and leadership hiring. We connect exceptional talent with visionary organizations to drive success.
+            <p className="mt-4 max-w-3xl text-lg md:text-xl mb-8">
+              People analytics, automation, and dashboards that deliver measurable ROI.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button asChild size="lg">
-                <Link href="/services">Our Services <ArrowRight className="ml-2 h-5 w-5" /></Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/services" className="btn-primary">
+                Explore Services
+              </Link>
+              <Link href="/case-studies" className="border border-white text-white px-5 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition-all">
+                See Case Studies
+              </Link>
             </div>
           </div>
         </section>
@@ -39,28 +39,30 @@ export default function Home() {
         {/* Services Section */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-12">Our Core Services</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {services.map((service) => {
                 const Icon = {
-                  'Talent Acquisition': Users,
-                  'Executive Search': Briefcase,
-                  'Leadership Hiring': Award,
+                  'People Analytics': Users,
+                  'HR Process Automation': Code,
+                  'Talent Acquisition Analytics': Briefcase,
                 }[service.title] || Users;
 
                 return (
-                  <Card key={service.id} className="text-center hover:shadow-lg transition-shadow duration-300">
+                  <Card key={service.id} className="border border-border hover:border-primary transition-all duration-300">
                     <CardHeader>
-                      <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
-                        <Icon className="h-8 w-8" />
+                      <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+                        <Icon className="h-6 w-6 text-primary" />
                       </div>
-                      <CardTitle className="font-headline">{service.title}</CardTitle>
+                      <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <Button variant="link" asChild className="text-accent-foreground font-semibold">
-                        <Link href={service.href}>Learn More <ArrowRight className="ml-1 h-4 w-4" /></Link>
-                      </Button>
+                      <CardDescription className="text-base text-foreground/80 mb-4">
+                        {service.description}
+                      </CardDescription>
+                      <Link href={`/services/${service.slug}`} className="text-primary font-medium flex items-center hover:underline">
+                        Learn how <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </CardContent>
                   </Card>
                 );
