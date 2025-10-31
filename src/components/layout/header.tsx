@@ -29,8 +29,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Briefcase className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold text-primary">Dhruvini Consulting</span>
+          <Briefcase className="h-7 w-7 text-[#0B1220]" />
+          <span className="font-headline text-xl font-bold text-[#000000]">Dhruvini Consulting Private Limited</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -60,8 +60,8 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 mb-4" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Briefcase className="h-7 w-7 text-primary" />
-                  <span className="font-headline text-lg font-bold">Dhruvini Consulting</span>
+                  <Briefcase className="h-7 w-7 text-[#0B1220]" />
+                  <span className="font-headline text-lg font-bold">Dhruvini Consulting Private Limited</span>
                 </Link>
                 {navItems.map((item) => (
                   <Link

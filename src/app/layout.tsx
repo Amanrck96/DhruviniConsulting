@@ -6,7 +6,7 @@ import Footer from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Dhruvini Consulting',
+  title: 'Dhruvini Consulting Private Limited',
   description: 'Expertise in Talent Acquisition, Executive Search, and Leadership Hiring.',
 };
 
