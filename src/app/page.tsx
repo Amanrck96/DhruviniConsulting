@@ -17,21 +17,28 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="hero-gradient py-16 md:py-24 rounded-xl mx-4 md:mx-8 my-8">
+        <section className="hero-section hero-gradient mx-4 md:mx-8 my-8">
           <div className="container mx-auto px-4 text-white">
-            <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-              Transforming HR & Business Operations with Data-Driven Strategy
-            </h1>
-            <p className="mt-4 max-w-3xl text-lg md:text-xl mb-8">
-              People analytics, automation, and dashboards that deliver measurable ROI.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/services" className="btn-primary">
-                Explore Services
-              </Link>
-              <Link href="/case-studies" className="border border-white text-white px-5 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition-all">
-                See Case Studies
-              </Link>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-3/5">
+                <h1 className="hero-title text-4xl md:text-5xl">
+                  Transforming HR & Business Operations with Data-Driven Strategy
+                </h1>
+                <p className="hero-subtext mt-4 max-w-3xl text-lg md:text-xl">
+                  People analytics, automation, and dashboards that deliver measurable ROI.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/services" className="hero-cta bg-white text-brand-blue">
+                    Explore Services
+                  </Link>
+                  <Link href="/case-studies" className="hero-cta border border-white text-white hover:bg-white hover:bg-opacity-10">
+                    See Case Studies
+                  </Link>
+                </div>
+              </div>
+              <div className="md:w-2/5 hero-image-bg rounded-lg min-h-[200px] md:min-h-[300px]">
+                {/* Image background is applied via CSS */}
+              </div>
             </div>
           </div>
         </section>

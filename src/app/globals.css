@@ -5,6 +5,83 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hero Section Styling */
+.hero-section {
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  border-radius: 0.75rem;
+  will-change: transform;
+}
+
+.hero-title {
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero-subtext {
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) 400ms forwards;
+}
+
+.hero-cta:hover {
+  transform: scale(1.05);
+}
+
+.hero-cta:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--brand-blue), var(--hover-blue));
+}
+
+.hero-image-bg {
+  background-image: url('https://scontent.fccu9-1.fna.fbcdn.net/v/t39.30808-6/468302068_122093724296653684_9159353726433165478_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VAhijhOvLPUQ7kNvwE8j8sA&_nc_oc=AdkbZkjX4tgAu3XXPsSPe1Eaalex_NywejtAEg6K1hJOwaToRbUPIU9kK0ig5aVHg1PA2wyceeqWjG_JhC8OThKp&_nc_zt=23&_nc_ht=scontent.fccu9-1.fna&_nc_gid=enGV4tLdKvdQ64iHzAp0fw&oh=00_Affauqnvy0U7Kg02UoYBcKIU71vbwriQPm7f5uztDFncUg&oe=690AB1A0');
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtext,
+  .hero-cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @layer base {
   :root {
     /* Brand Colors */
