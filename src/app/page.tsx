@@ -36,7 +36,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="md:w-2/5 hero-image-bg rounded-lg min-h-[200px] md:min-h-[300px]">
+              <div className="md:w-2/5 hero-image-bg rounded-lg min-h-[200px] md:min-h-[300px] flex items-center justify-center">
                 {/* Image background is applied via CSS */}
               </div>
             </div>
@@ -64,10 +64,10 @@ export default function Home() {
                       <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription className="text-base text-foreground/80 mb-4">
+                      <CardDescription className="text-base text-foreground/90 mb-4 font-medium">
                         {service.description}
                       </CardDescription>
-                      <Link href={`/services/${service.slug}`} className="text-primary font-medium flex items-center hover:underline">
+                      <Link href={`/services/${service.slug}`} className="text-primary font-semibold flex items-center hover:underline">
                         Learn how <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </CardContent>

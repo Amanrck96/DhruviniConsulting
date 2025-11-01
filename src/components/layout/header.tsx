@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import type { NavItem } from '@/lib/types';
 import Logo from '@/components/layout/logo';
@@ -58,8 +58,20 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Navigation Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col gap-6 p-6">
-                <Logo className="mb-4" />
+                <Link
+                  href="/"
+                  className={cn(
+                    'text-lg font-medium',
+                    isNavItemActive('/') ? 'text-primary' : 'text-foreground'
+                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
