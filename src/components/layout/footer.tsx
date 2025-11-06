@@ -63,13 +63,13 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-foreground uppercase">Contact</h2>
               <ul className="text-muted-foreground font-medium space-y-4">
                   <li>
-                    <a href="mailto:Contact-abx.com" className="hover:text-primary transition-colors">
-                        Contact-abx.com
+                    <a href="mailto:info@dhruviniconsulting.com" className="hover:text-primary transition-colors">
+                        info@dhruviniconsulting.com
                     </a>
                   </li>
                   <li>
-                    <a href="tel:+1234567890" className="hover:text-primary transition-colors">
-                        xxxxxxxxxx
+                    <a href="tel:+919148184794" className="hover:text-primary transition-colors">
+                        +91 91481 84794
                     </a>
                   </li>
               </ul>

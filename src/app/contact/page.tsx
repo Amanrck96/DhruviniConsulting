@@ -44,7 +44,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Office Address</h3>
-                  <p className="text-muted-foreground">xyxyxyxyxyxyxyxyxyxy</p>
+                  <p className="text-muted-foreground">Flat # 2276, Tower 2, Prestige Lakeside Habitat, Varthur, Bangalore - 560087</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Email</h3>
-                  <a href="mailto:Contact-abx.com" className="text-accent-foreground hover:underline">Contact-abx.com</a>
+                  <a href="mailto:info@dhruviniconsulting.com" className="text-accent-foreground hover:underline">info@dhruviniconsulting.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -62,7 +62,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Phone</h3>
-                  <a href="tel:+1234567890" className="text-accent-foreground hover:underline">xxxxxxxxxx</a>
+                  <a href="tel:+919148184794" className="text-accent-foreground hover:underline">+91 91481 84794</a>
                 </div>
               </div>
             </div>
